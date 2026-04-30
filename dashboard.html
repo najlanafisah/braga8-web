@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braga8 Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <main>
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="assets/braga8-logo.svg" class="logo-image">
+            </div>
+
+            <h1 class="sidebar-title">Dashboard</h1>
+
+            <nav class="sidebar-nav">
+
+                <div class="menu-group active">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-shop"></i></span>
+                        <span>Tenant & Unit</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Tenant List</a>
+                        <a href="#">Unit List</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-gear"></i></span>
+                        <span>Utilities</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Meter Data</a>
+                        <a href="#">Meter Readings</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-money-bill"></i></span>
+                        <span>Tarif & Billings</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Tarif Setup</a>
+                        <a href="#">Generate Tagihan</a>
+                        <a href="#">Invoice</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-money-bill"></i></span>
+                        <span>Payment</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Payment Status</a>
+                        <a href="#">Payment Logs</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-list"></i></span>
+                        <span>Reports</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Usage Reports</a>
+                        <a href="#">Export data</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-triangle-exclamation"></i></span>
+                        <span>Complaints</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Complaint List</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-user"></i></span>
+                        <span>User Management</span>
+                    </a>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-money-bill"></i></span>
+                        <span>Audit Log</span>
+                    </a>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-sliders"></i></span>
+                        <span>Settings</span>
+                    </a>
+                </div>
+
+            </nav>
+
+        </aside>
+
+        <div class="popup" id="notif-popup">
+            <div class="popup-overlay"></div>
+
+            <div class="popup-card popup-md">
+                <div class="popup-close-wrapper">
+                    <button class="popup-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div class="popup-header">Notifications</div>
+                <div class="popup-body">
+                    <div class="notification-wrapper">
+                        <div class="notification">
+                            <div class="notif-box mb">
+                                <p>Unit 2A Meter Reading was Added!</p>
+                            </div>
+                            <p>15:30 3 March 3036</p>
+                        </div>
+                        <div class="notification">
+                            <div class="notif-box mb">
+                                <p>Unit 3B Electricity Reading was Added!</p>
+                            </div>
+                            <p>11:30 3 March 2036</p>
+                        </div>
+                        <div class="notification">
+                            <div class="notif-box mb">
+                                <p>Unit 2C Meter Reading was Added!</p>
+                            </div>
+                            <p>18:00 7 March 3036</p>
+                        </div>
+                        <div class="notification">
+                            <div class="notif-box mb">
+                                <p>Unit 5G Electricity Reading was Added!</p>
+                            </div>
+                            <p>13:54 5 March 3026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="detail-profile-popup">
+            <div class="popup-overlay"></div>
+
+            <div class="popup-card popup-md">
+                <div class="popup-close-wrapper">
+                    <button class="popup-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="popup-header">Account Details</div>
+                <div class="popup-body user-account-info">
+                    <div class="flex gap mb-2">
+                        <div class="profile-container">
+                            <div class="profile-icon">
+                                <svg viewBox="0 0 24 24" fill="#a04d30">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="user-info">
+                            <p>Najla Nafisah</p>
+                            <p>@najlanafisah</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-2">
+                        <div>
+                            <div class="account-item mb-1">
+                                <p>Join Date</p>
+                                <p>11/06/2009</p>
+                            </div>
+                            <div class="account-item">
+                                <p>Email</p>
+                                <p>najla@gmail.com</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="account-item">
+                                <p>Role</p>
+                                <p>Admin</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap">
+                        <button class="green-btn" id="openEdit">
+                            <span><i class="fa-solid fa-pen-to-square"></i></span>
+                            <span>Edit Account</span>
+                        </button>
+                        <button class="light-brown-btn">
+                            <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="edit-profile-popup">
+            <div class="popup-overlay"></div>
+
+            <div class="popup-card popup-md">
+                <div class="popup-close-wrapper">
+                    <button class="popup-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <div class="popup-header">Edit Account</div>
+
+                <div class="popup-body">
+                    <div class="mb-2">
+                        <div class="text-field">
+                            <label class="text-field-label">Name</label>
+                            <input type="text" class="text-field-input" placeholder="your name">
+                        </div>
+                        <div class="text-field">
+                            <label class="text-field-label">Username</label>
+                            <input type="text" class="text-field-input" placeholder="your username">
+                        </div>
+                        <div class="text-field">
+                            <label class="text-field-label">Email</label>
+                            <input type="email" class="text-field-input" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    <button class="light-brown-btn" id="saveEdit">
+                        <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span>Update Account Information</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="right-content">
+            <div class="dashboard-header mb-2">
+                <div>
+                    <h1 class="title-text">Dashboard</h1>
+                    <p class="subtitle-text">Braga8 Utility Billing Management</p>
+                </div>
+
+                <div class="header-user">
+                    <div class="icon-wrapper" data-popup="notif-popup">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="notif-dot"></span>
+                    </div>
+
+                    <div class="profile-container" data-popup="detail-profile-popup">
+                        <div class="profile-icon">
+                            <svg viewBox="0 0 24 24" fill="#a04d30">
+                                <path
+                                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <!-- CARD -->
+                <div class="card-container mb-1">
+                    <div class="card">
+                        <p class="card-label">Total Tenant</p>
+                        <p class="card-value">128</p>
+                        <p class="card-caption">+3 at January</p>
+                    </div>
+                    <div class="card">
+                        <p class="card-label">Total Tagihan Bulan Ini</p>
+                        <p class="card-value">↑13%</p>
+                        <p class="card-caption">January</p>
+                    </div>
+                    <div class="card">
+                        <p class="card-label">Belum Dibayar</p>
+                        <p class="card-value">34</p>
+                        <p class="card-caption">Invoices</p>
+                    </div>
+                    <div class="card">
+                        <p class="card-label">Komplain Aktif</p>
+                        <p class="card-value">8</p>
+                        <p class="card-caption">Cases</p>
+                    </div>
+                </div>
+
+                <div class="card-container mb-1">
+                    <div class="card">
+                        <p class="card-label">Billing Overview</p>
+                        <div class="chart">
+                            <div class="pie-chart" id="chart"></div>
+
+                            <div class="chart-info">
+                                <div class="item">
+                                    <span class="dot paid"></span>
+                                    <div>
+                                        <p>Paid</p>
+                                        <h2 id="paid">65%</h2> <!-- ini bisa di ganti yaa-->
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <span class="dot unpaid"></span>
+                                    <div>
+                                        <p>Unpaid</p>
+                                        <h2 id="unpaid">25%</h2> <!-- ini bisa di ganti yaa-->
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <span class="dot overdue"></span>
+                                    <div>
+                                        <p>Overdue</p>
+                                        <h2 id="overdue">10%</h2> <!-- ini bisa di ganti yaa-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <p class="card-label">Input Meter Hari Ini</p>
+                        <div class="metric">
+                            <span class="card-value">46</span> <!-- nanti ini isi yang bulan ini-->
+                            <span class="metric-max">/68</span> <!-- nah kalo ini yangbuat bulan sebelumnya-->
+                            <span class="card-caption">Unit</span>
+                        </div>
+                        <button class="light-brown-btn">Audit Logs →</button>
+                    </div>
+
+                    <div class="card bar-chart-container">
+
+                        <!-- CHART -->
+                        <div class="bar-chart-content">
+                            <p class="card-label">Monthly Usage Chart</p>
+
+                            <div class="bar-chart-wrapper">
+                                <div class="bar-chart-grid"></div>
+                                <div class="bar-chart-bars" id="chart-bars"></div>
+                            </div>
+
+                            <div class="bar-chart-labels" id="chart-labels"></div>
+                        </div>
+
+                        <!-- LEGEND -->
+                        <div class="bar-chart-legend">
+                            <div class="bar-chart-legend-item">
+                                <span class="bar-chart-legend-color electricity"></span>
+                                <span>Electricity</span>
+                            </div>
+                            <div class="bar-chart-legend-item">
+                                <span class="bar-chart-legend-color water"></span>
+                                <span>Water</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="card">
+                        <p class="card-label">Quick Actions</p>
+                        <div class=" button-wrapper">
+                            <button class="dark-brown-button">
+                                <span>+</span>
+                                <span>Generate Tagihan</span>
+                            </button>
+                            <button class="dark-brown-button">
+                                <span>+</span>
+                                <span>Add Tenant</span>
+                            </button>
+                            <button class="dark-brown-button">
+                                <span>+</span>
+                                <span>Edit Tarif</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-label">Monthly Usage</h2>
+
+                        <div class="card-scroll">
+                            <table class="usage-table">
+                                <thead>
+                                    <tr>
+                                        <th>Month</th>
+                                        <th>Electricity</th>
+                                        <th>Water Usage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>January</td>
+                                        <td>12,000 kWh</td>
+                                        <td>12,000 L</td>
+                                    </tr>
+                                    <tr>
+                                        <td>January</td>
+                                        <td>12,000 kWh</td>
+                                        <td>12,000 L</td>
+                                    </tr>
+                                    <tr>
+                                        <td>January</td>
+                                        <td>12,000 kWh</td>
+                                        <td>12,000 L</td>
+                                    </tr>
+                                    <tr>
+                                        <td>January</td>
+                                        <td>12,000 kWh</td>
+                                        <td>12,000 L</td>
+                                    </tr>
+                                    <tr>
+                                        <td>January</td>
+                                        <td>12,000 kWh</td>
+                                        <td>12,000 L</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
