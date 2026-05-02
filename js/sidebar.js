@@ -3,17 +3,24 @@ export function initSidebar() {
 
   groups.forEach(group => {
     const menu = group.querySelector('.menu-item');
+    const submenu = group.querySelector('.submenu');
 
     if (!menu) return;
 
     menu.addEventListener('click', (e) => {
-      e.preventDefault();
 
-      groups.forEach(g => {
-        if (g !== group) g.classList.remove('active');
-      });
+      // 👉 hanya block kalau ADA submenu
+      if (submenu) {
+        e.preventDefault();
 
-      group.classList.toggle('active');
+        groups.forEach(g => {
+          if (g !== group) g.classList.remove('active');
+        });
+
+        group.classList.toggle('active');
+      }
+
+      // 👉 kalau ga ada submenu → biarin navigate
     });
   });
 }
