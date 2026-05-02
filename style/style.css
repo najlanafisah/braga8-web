@@ -2,6 +2,27 @@
     margin: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(150, 150, 150, 0.6) transparent;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom,
+            rgba(120, 120, 120, 0.8),
+            rgba(152, 152, 152, 0.4));
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(200, 200, 200, 0.6);
 }
 
 body {
@@ -68,6 +89,7 @@ main {
     font-size: 1.2rem;
     text-decoration: underline;
     margin-bottom: 1rem;
+    color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -548,13 +570,13 @@ main {
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 14px;
+    padding: 10px;
     width: 100%;
     border-radius: 14px;
     border: 1px solid #e4e4e475;
     font-size: 12px;
     color: white;
-    background-color: #391d18a3;
+    background-color: #55282093;
     box-shadow:
         0 8px 32px rgba(176, 75, 41, 0.3),
         inset 0 2px 8px rgba(30, 30, 30, 0.4),
@@ -651,7 +673,7 @@ main {
     border: none;
     border-radius: 14px;
     background: #E5D0C9;
-    font-size: 1rem;
+    font-size: 14px;
     transition: all 0.3s ease;
     box-shadow: 0 3.5px 14px rgba(0, 0, 0, 0.2);
 }
@@ -659,6 +681,71 @@ main {
 .text-field-input:focus {
     outline: none;
     box-shadow: 0 3.5px 14px rgba(0, 0, 0, 0.4);
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+}
+
+.dropdown-selected {
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: #E5D0C9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 3.5px 14px rgba(0,0,0,0.2);
+    transition: 0.2s;
+}
+
+.arrow {
+    transition: 0.2s;
+}
+
+.custom-dropdown.active .dropdown-selected {
+    border-radius: 14px 14px 0 0;
+}
+
+.custom-dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-options {
+    position: absolute;
+    width: 100%;
+    background: #fee6de;
+    border-radius: 0 0 14px 14px;
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.25s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.dropdown-options div {
+    color: #131316;
+}
+
+.custom-dropdown.active .dropdown-options {
+    max-height: 200px;
+}
+
+.option {
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.option:hover {
+    background: #eed5cc;
+}
+
+.placeholder {
+    color: #888;
+    font-size: 14px;
 }
 
 /* POP UP CARD */
@@ -848,36 +935,33 @@ main {
 
 .actions {
     display: flex;
-    flex-direction: row;
     gap: 6px;
 }
 
 /* ACTION BTN */
 .dark-brown-btn-action {
-    background-color: #391d1893;
-    box-shadow:
-        0 8px 32px rgba(176, 75, 41, 0.3),
-        inset 0 2px 8px rgba(30, 30, 30, 0.4),
-        inset 0 -3px 10px rgba(0, 0, 0, 0.4);
+    background-color: #55282093;
 }
 
 .light-brown-btn-action {
     background-color: #602316;
-    box-shadow:
-        0 8px 32px rgba(176, 75, 41, 0.3),
-        inset 0 2px 8px rgba(30, 30, 30, 0.4),
-        inset 0 -3px 10px rgba(0, 0, 0, 0.4);
 }
 
 .light-green-btn-action {
     background-color: #372c19;
-    box-shadow:
-        0 8px 32px rgba(92, 105, 41, 0.3),
-        inset 0 2px 8px rgba(30, 30, 30, 0.4),
-        inset 0 -3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.light-grey-btn-action {
+    background-color: #434343c4;
+}
+
+.dark-grey-btn-action {
+    background-color: #262626c4;
 }
 
 .dark-brown-btn-action,
+.light-grey-btn-action,
+.dark-grey-btn-action,
 .light-brown-btn-action,
 .light-green-btn-action {
     display: flex;
@@ -885,12 +969,17 @@ main {
     justify-content: center;
     width: 100%;
     gap: 6px;
-    padding: 4px 10px;
+    padding: 4px 12px;
     border-radius: 3rem;
     border: 1px solid rgba(255, 255, 255, 0.5);
     font-size: 10px;
     color: white;
+    white-space: nowrap;
     cursor: pointer;
+    box-shadow:
+        0 4px 10px rgba(176, 75, 41, 0.2),
+        inset 0 2px 8px rgba(30, 30, 30, 0.4),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* TOOLBAR */
@@ -969,4 +1058,45 @@ main {
 .btn-delete-wrapper button {
     flex: 1;
     padding: 12px;
+}
+
+/* STATUS */
+.dark-green-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    color: white;
+    background-color: #2f3719;
+    box-shadow:
+        0 4px 20px rgba(92, 105, 41, 0.2),
+        inset 0 2px 8px rgba(30, 30, 30, 0.4),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.red-btn {
+    background-color: #6d080878;
+    box-shadow:
+        0 4px 20px rgba(105, 41, 41, 0.3),
+        inset 0 2px 8px rgba(30, 30, 30, 0.4),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.dark-green-btn,
+.red-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    color: white;
 }

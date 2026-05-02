@@ -1,11 +1,13 @@
 import { initSidebar } from "../js/sidebar.js";
 import { initPopups } from "../js/popup.js";
 import { initChart } from "../js/chart.js";
+import { initDropdown } from "../js/dropdown.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initSidebar();
   initPopups();
   initChart();
+  initDropdown();
 
   // EDIT ACCOUNT FLOW
   const openEdit = document.getElementById("openEdit");
