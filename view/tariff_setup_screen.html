@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tariff Setup</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <main>
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="../assets/braga8-logo.svg" class="logo-image">
+            </div>
+
+            <h1 class="sidebar-title">Dashboard</h1>
+
+            <nav class="sidebar-nav">
+
+                <div class="menu-group active">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-shop"></i></span>
+                        <span>Tenant & Unit</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Tenant List</a>
+                        <a href="#">Unit List</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-gear"></i></span>
+                        <span>Utilities</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Meter Data</a>
+                        <a href="#">Meter Readings</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-money-bill"></i></span>
+                        <span>Tarif & Billings</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Tarif Setup</a>
+                        <a href="#">Generate Tagihan</a>
+                        <a href="#">Invoice</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-money-bill"></i></span>
+                        <span>Payment</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Payment Status</a>
+                        <a href="#">Payment Logs</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-list"></i></span>
+                        <span>Reports</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Usage Reports</a>
+                        <a href="#">Export data</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-triangle-exclamation"></i></span>
+                        <span>Complaints</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Complaint List</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-user"></i></span>
+                        <span>User Management</span>
+                    </a>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-money-bill"></i></span>
+                        <span>Audit Log</span>
+                    </a>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-sliders"></i></span>
+                        <span>Settings</span>
+                    </a>
+                </div>
+
+            </nav>
+
+        </aside>
+
+        <div class="popup" id="add-new-tariff">
+            <div class="popup-overlay"></div>
+
+            <div class="popup-card popup-lg">
+                <div class="popup-close-wrapper">
+                    <button class="popup-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="popup-header">Add New Tariff</div>
+                <div class="popup-body">
+                    <div class="add-tariff-wrapper mb-2">
+                        <div>
+                            <div class="text-field">
+                                <label class="text-field-label">Electricity Cost</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field-label">Electricity Load Cost</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field-label">Admin Fee</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field-label">Tax Percent %</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-field">
+                                <label class="text-field-label">Water Cost</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field-label">Maintanence</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field-label">Stamp Fee</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field-label">Other Fee</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="dark-brown-button" data-close="add-new-tariff">Add Tariff</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="update-tariff">
+            <div class="popup-overlay"></div>
+
+            <div class="popup-card popup-lg">
+                <div class="popup-close-wrapper">
+                    <button class="popup-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="popup-header">Edit Normal Tariff</div>
+                <div class="popup-body">
+                    <div class="add-tariff-wrapper mb-2">
+                        <div>
+                            <!-- Ini nanti bikin dia udh keiisi yah, jadi ambil dari data sebelumnya -->
+                            <div class="text-field">
+                                <label class="text-field-label">Electricity Cost</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field-label">Electricity Load Cost</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field-label">Admin Fee</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field-label">Tax Percent %</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-field">
+                                <label class="text-field-label">Water Cost</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field-label">Maintanence</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field-label">Stamp Fee</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                            <div class="text-field">
+                                <label class="text-field-label">Other Fee</label>
+                                <input type="number" class="text-field-input">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="dark-brown-button" data-close="update-tariff">Update Tariff</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="detail-tariff">
+            <div class="popup-overlay"></div>
+
+            <div class="popup-card popup-md">
+                <div class="popup-close-wrapper">
+                    <button class="popup-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="popup-header">Normal Tariff</div>
+                <div class="popup-body user-detail-info">
+                    <div class="detail-item-wrapper">
+                        <div>
+                            <div class="detail-item">
+                                <p>Electricity Cost</p>
+                                <p>Rp 300.000.00</p>
+                            </div>
+                            <div class="detail-item">
+                                <p>Electricity Load Cost</p>
+                                <p>Rp 200.000.00</p>
+                            </div>
+                            <div class="detail-item">
+                                <p>Admin Fee</p>
+                                <p>Rp 5000</p>
+                            </div>
+                            <div class="detail-item">
+                                <p>Tax Percent %</p>
+                                <p>5%</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="detail-item">
+                                <p>Electricity Cost</p>
+                                <p>Rp 300.000.00</p>
+                            </div>
+                            <div class="detail-item">
+                                <p>Electricity Load Cost</p>
+                                <p>Rp 200.000.00</p>
+                            </div>
+                            <div class="detail-item">
+                                <p>Admin Fee</p>
+                                <p>Rp 5000</p>
+                            </div>
+                            <div class="detail-item">
+                                <p>Tax Percent %</p>
+                                <p>5%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="delete-tariff">
+            <div class="popup-overlay"></div>
+
+            <div class="popup-card popup-md">
+                <div class="popup-close-wrapper">
+                    <button class="popup-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="popup-header">Delete this Tariff</div>
+                <div class="popup-body btn-delete-wrapper">
+                    <button class="light-brown-btn" data-close="delete-tariff">Yes</button>
+                    <button class="dark-brown-button" data-close="delete-tariff">No</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-content">
+            <div class="dashboard-header mb-2">
+                <div>
+                    <h1 class="title-text">Tariff Setup</h1>
+                    <p class="subtitle-text">Braga8 Utility Billing Management</p>
+                </div>
+            </div>
+            <div class="toolbar mb-2">
+                <div class="search-wrapper">
+                    <input type="text" placeholder="Search Tariff Type..">
+                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                </div>
+
+                <div class="toolbar-action">
+                    <button class="light-brown-btn btn-small" data-popup="add-new-tariff">
+                        <span><i class="fa-solid fa-plus"></i></span>
+                        <span>Add New Tariff Type</span>
+                    </button>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <div class="table-card">
+                    <div class="table-card-header">
+                        <div class="table-card-title">
+                            <span class="label">Tenant:</span>
+                            <span class="value">Burger Bangor</span>
+                        </div>
+
+                        <div class="table-card-meta">
+                            2 Units
+                        </div>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Electricity Cost</th>
+                                <th>Water Cost</th>
+                                <th>Electric Load Cost</th>
+                                <th>Maintanence</th>
+                                <th>Admin Fee</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Rp 300,000</td>
+                                <td>Rp 300,000</td>
+                                <td>Rp 30,000</td>
+                                <td>Rp 30,000</td>
+                                <td>Rp 30,000</td>
+                                <td class="actions">
+                                    <button class="light-green-btn-action" data-popup="detail-tariff">
+                                        <span><i class="fa-solid fa-eye"></i></span>
+                                        <span>View</span>
+                                    </button>
+                                    <button class="light-brown-btn-action" data-popup="update-tariff">
+                                        <span><i class="fa-solid fa-pen"></i></span>
+                                        <span>Edit</span>
+                                    </button>
+                                    <button class="dark-brown-btn-action" data-popup="delete-tariff">
+                                        <span><i class="fa-solid fa-trash"></i></span>
+                                        <span>Delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="table-card">
+                    <div class="table-card-header">
+                        <div class="table-card-title">
+                            <span class="label">Tenant:</span>
+                            <span class="value">Solaria</span>
+                        </div>
+
+                        <div class="table-card-meta">
+                            3 Units
+                        </div>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Electricity Cost</th>
+                                <th>Water Cost</th>
+                                <th>Electric Load Cost</th>
+                                <th>Maintanence</th>
+                                <th>Admin Fee</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Rp 300,000</td>
+                                <td>Rp 300,000</td>
+                                <td>Rp 30,000</td>
+                                <td>Rp 30,000</td>
+                                <td>Rp 30,000</td>
+                                <td class="actions">
+                                    <button class="light-green-btn-action" data-popup="detail-tariff">
+                                        <span><i class="fa-solid fa-eye"></i></span>
+                                        <span>View</span>
+                                    </button>
+                                    <button class="light-brown-btn-action" data-popup="update-tariff">
+                                        <span><i class="fa-solid fa-pen"></i></span>
+                                        <span>Edit</span>
+                                    </button>
+                                    <button class="dark-brown-btn-action" data-popup="delete-tariff">
+                                        <span><i class="fa-solid fa-trash"></i></span>
+                                        <span>Delete</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>

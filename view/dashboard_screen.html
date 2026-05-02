@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Braga8 Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
     <main>
-
         <aside class="sidebar">
 
             <div class="sidebar-logo">
-                <img src="assets/braga8-logo.svg" class="logo-image">
+                <img src="../assets/braga8-logo.svg" class="logo-image">
             </div>
 
             <h1 class="sidebar-title">Dashboard</h1>
@@ -50,7 +49,7 @@
                         <span>Tarif & Billings</span>
                     </a>
                     <div class="submenu">
-                        <a href="#">Tarif Setup</a>
+                        <a href="tariff_setup_screen.html">Tarif Setup</a>
                         <a href="#">Generate Tagihan</a>
                         <a href="#">Invoice</a>
                     </div>
@@ -182,17 +181,17 @@
                     </div>
                     <div class="flex gap-2 mb-2">
                         <div>
-                            <div class="account-item mb-1">
+                            <div class="detail-item">
                                 <p>Join Date</p>
                                 <p>11/06/2009</p>
                             </div>
-                            <div class="account-item">
+                            <div class="detail-item">
                                 <p>Email</p>
                                 <p>najla@gmail.com</p>
                             </div>
                         </div>
                         <div>
-                            <div class="account-item">
+                            <div class="detail-item">
                                 <p>Role</p>
                                 <p>Admin</p>
                             </div>
@@ -239,15 +238,13 @@
                             <input type="email" class="text-field-input" placeholder="your@email.com">
                         </div>
                     </div>
-                    <button class="light-brown-btn" id="saveEdit">
+                    <button class="light-brown-btn" data-close="edit-profile-popup">
                         <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
                         <span>Update Account Information</span>
                     </button>
                 </div>
             </div>
         </div>
-
-
 
         <div class="right-content">
             <div class="dashboard-header mb-2">
@@ -437,7 +434,7 @@
 
     </main>
 
-    <script src="script.js"></script>
+    <script type="module" src="../js/main.js"></script>
 
 </body>
 
