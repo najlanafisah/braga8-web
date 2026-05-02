@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Logs Screen</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <main>
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <img src="../assets/braga8-logo.svg" class="logo-image">
+            </div>
+
+            <a href="dashboard_screen.html">
+                <h1 class="sidebar-title">Dashboard</h1>
+            </a>
+
+            <nav class="sidebar-nav">
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-shop"></i></span>
+                        <span>Tenant & Unit</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Tenant List</a>
+                        <a href="#">Unit List</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-gear"></i></span>
+                        <span>Utilities</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Meter Data</a>
+                        <a href="#">Meter Readings</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-money-bill"></i></span>
+                        <span>Tarif & Billings</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="tariff_setup_screen.html">Tarif Setup</a>
+                        <a href="#">Generate Tagihan</a>
+                        <a href="invoices_screen.html">Invoice</a>
+                    </div>
+                </div>
+
+                <div class="menu-group active">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-money-bill"></i></span>
+                        <span>Payment</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Payment Status</a>
+                        <a href="#">Payment Logs</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-list"></i></span>
+                        <span>Reports</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Usage Reports</a>
+                        <a href="#">Export data</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-triangle-exclamation"></i></span>
+                        <span>Complaints</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="#">Complaint List</a>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-user"></i></span>
+                        <span>User Management</span>
+                    </a>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-money-bill"></i></span>
+                        <span>Audit Log</span>
+                    </a>
+                </div>
+
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-sliders"></i></span>
+                        <span>Settings</span>
+                    </a>
+                </div>
+
+            </nav>
+
+        </aside>
+
+        <div class="right-content">
+            <div class="dashboard-header mb-2">
+                <div>
+                    <h1 class="title-text">Payment Logs</h1>
+                    <p class="subtitle-text">Braga8 Utility Billing Management</p>
+                </div>
+            </div>
+            <div class="toolbar mb-2">
+                <div class="search-wrapper">
+                    <input type="text" placeholder="Search Tenant..">
+                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                </div>
+            </div>
+            <div class="card-image-container mb-2">
+                <div class="card card-with-image">
+                    <div class="card-image"></div>
+                    <div class="card-body">
+                        <p class="card-label">Total Bill</p>
+                        <p class="card-value">Rp.1028,00</p>
+                    </div>
+                </div>
+                <div class="card card-with-image">
+                    <div class="card-image"></div>
+                    <div class="card-body">
+                        <p class="card-label">Total Bill</p>
+                        <p class="card-value">Rp.328,00</p>
+                    </div>
+                </div>
+                <div class="card card-with-image">
+                    <div class="card-image"></div>
+                    <div class="card-body">
+                        <p class="card-label">Total Bill</p>
+                        <p class="card-value">Rp.700,00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <div class="table-card">
+                    <div class="table-card-header">
+                        <div class="table-card-title">
+                            <span class="label">Tenant:</span>
+                            <span class="value">Burger Bangor</span>
+                        </div>
+
+                        <div class="table-card-meta">
+                            1 Unit
+                        </div>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Invoice No</th>
+                                <th>Unit</th>
+                                <th>Total</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>INV-1771741827</td>
+                                <td>2A</td>
+                                <td>Rp 1,300,000</td>
+                                <td>30 January 2026</td>
+                                <td class="status">
+                                    <button class="dark-green-btn">
+                                        PAID
+                                    </button>
+                                </td>
+                                <td class="actions">
+                                    <button class="light-grey-btn-action">
+                                        <span><i class="fa-solid fa-check"></i></span>
+                                        <span>Send Reminder</span>
+                                    </button>
+                                    <button class="light-green-btn-action" data-popup="detail-tariff">
+                                        <span><i class="fa-solid fa-eye"></i></span>
+                                        <span>View Evidence</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="table-card">
+                    <div class="table-card-header">
+                        <div class="table-card-title">
+                            <span class="label">Tenant:</span>
+                            <span class="value">Solaria</span>
+                        </div>
+
+                        <div class="table-card-meta">
+                            3 Units
+                        </div>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Invoice No</th>
+                                <th>Unit</th>
+                                <th>Total</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>INV-1771741827</td>
+                                <td>2K</td>
+                                <td>Rp 2,300,000</td>
+                                <td>30 January 2026</td>
+                                <td class="status">
+                                    <button class="dark-green-btn">
+                                        PAID
+                                    </button>
+                                </td>
+                                <td class="actions">
+                                    <button class="light-grey-btn-action">
+                                        <span><i class="fa-solid fa-check"></i></span>
+                                        <span>Send Reminder</span>
+                                    </button>
+                                    <button class="light-green-btn-action" data-popup="detail-tariff">
+                                        <span><i class="fa-solid fa-eye"></i></span>
+                                        <span>View Evidence</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>INV-1771741827</td>
+                                <td>2L</td>
+                                <td>Rp 2,300,000</td>
+                                <td>30 January 2026</td>
+                                <td class="status">
+                                    <button class="dark-green-btn">
+                                        PAID
+                                    </button>
+                                </td>
+                                <td class="actions">
+                                    <button class="light-grey-btn-action">
+                                        <span><i class="fa-solid fa-check"></i></span>
+                                        <span>Send Reminder</span>
+                                    </button>
+                                    <button class="light-green-btn-action" data-popup="detail-tariff">
+                                        <span><i class="fa-solid fa-eye"></i></span>
+                                        <span>View Evidence</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>INV-1771741827</td>
+                                <td>2M</td>
+                                <td>Rp 2,500,000</td>
+                                <td>30 January 2026</td>
+                                <td class="status">
+                                    <button class="red-btn">
+                                        UNPAID
+                                    </button>
+                                </td>
+                                <td class="actions">
+                                    <button class="dark-grey-btn-action">
+                                        <span>Send Reminder</span>
+                                    </button>
+                                    <button class="light-green-btn-action" data-popup="detail-tariff">
+                                        <span><i class="fa-solid fa-eye"></i></span>
+                                        <span>View Evidence</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="table-card">
+                    <div class="table-card-header">
+                        <div class="table-card-title">
+                            <span class="label">Tenant:</span>
+                            <span class="value">Fore</span>
+                        </div>
+
+                        <div class="table-card-meta">
+                            2 Units
+                        </div>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Invoice No</th>
+                                <th>Unit</th>
+                                <th>Total</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>INV-1771741827</td>
+                                <td>3C</td>
+                                <td>Rp 1,500,000</td>
+                                <td>30 January 2026</td>
+                                <td class="status">
+                                    <button class="red-btn">
+                                        UNPAID
+                                    </button>
+                                </td>
+                                <td class="actions">
+                                    <button class="dark-grey-btn-action">
+                                        <span>Send Reminder</span>
+                                    </button>
+                                    <button class="light-green-btn-action" data-popup="detail-tariff">
+                                        <span><i class="fa-solid fa-eye"></i></span>
+                                        <span>View Evidence</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>INV-1771741827</td>
+                                <td>3D</td>
+                                <td>Rp 1,600,000</td>
+                                <td>30 January 2026</td>
+                                <td class="status">
+                                    <button class="dark-green-btn">
+                                        PAID
+                                    </button>
+                                </td>
+                                <td class="actions">
+                                    <button class="light-grey-btn-action">
+                                        <span><i class="fa-solid fa-check"></i></span>
+                                        <span>Send Reminder</span>
+                                    </button>
+                                    <button class="light-green-btn-action" data-popup="detail-tariff">
+                                        <span><i class="fa-solid fa-eye"></i></span>
+                                        <span>View Evidence</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>
